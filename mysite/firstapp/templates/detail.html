@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Détail</h1>
+    <ul>
+        <li>{{event.nb_inscrit}}</li>
+        <li>{{event.information}}</li>
+        <li>{{event.date}}</li>
+        {% if user.is_authenticated %}
+        <form type="submit" method="POST" action="{% url 'inscrption_event' event.id %}">{% csrf_token %}
+            <button>s'inscrire</button>
+        </form>
+        {% endif %}
+    </ul>
+</body>
+</html>

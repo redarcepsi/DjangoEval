@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event</h1>
+    <ul>
+        {% for event in Events %}
+            <li>{{event.nb_inscrit}}</li>
+            <li>{{event.date}}</li>
+            <a href="{% url 'detail' event.id %}">detail</a>
+        {% endfor %}
+    </ul>
+</body>
+</html>
